@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "rl Course"
+version = "0.1.0"
+description = "Reinforcement Learning course"
+authors = ["Flavio Codeço Coelho <fccoelho@gmail.com>"]
+license = "GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.0.163"
+openai = "^0.27.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.3.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

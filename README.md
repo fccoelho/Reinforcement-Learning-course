@@ -36,6 +36,7 @@ Advanced course on Reinforcement Learning.
 ### References:
 
 1. "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto (2018)
+1. [Python implementation based on the book "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto (2018)](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction) 
 1. "Deep Reinforcement Learning Hands-On" by Maxim Lapan (2018)
 1. OpenAI Gym environment (https://gym.openai.com/)
 1. TensorFlow documentation (https://www.tensorflow.org/guide)
