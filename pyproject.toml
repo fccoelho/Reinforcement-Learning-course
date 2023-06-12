@@ -11,8 +11,17 @@ python = "^3.11"
 langchain = "^0.0.163"
 openai = "^0.27.6"
 modin = "^0.22.0"
-gymnasium = {extras = ["classic-control"], version = "^0.28.1"}
+gymnasium = {extras = ["accept-rom-license"], version = "^0.28.1"}
 torch = "^2.0.1"
+tensorboard = "^2.13.0"
+tensorboardx = "^2.6"
+opencv-python = "^4.7.0.72"
+pybullet = "^3.2.5"
+ignite = "^1.1.0"
+pytorch-ignite = "^0.4.12"
+ale-py = "^0.8.1"
+atari-py = "^0.2.9"
+nltk = "^3.8.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.3.1"

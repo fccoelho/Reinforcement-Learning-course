@@ -12,8 +12,8 @@ from ignite.contrib.handlers import tensorboard_logger as tb_logger
 
 import torchvision.utils as vutils
 
-import gym
-import gym.spaces
+import gymnasium as gym
+import gymnasium.spaces
 
 import numpy as np
 

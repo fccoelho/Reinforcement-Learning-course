@@ -10,8 +10,8 @@ from tensorboardX import SummaryWriter
 
 import torchvision.utils as vutils
 
-import gym
-import gym.spaces
+import gymnasium as gym
+import gymnasium.spaces
 
 import numpy as np
 
@@ -143,7 +143,7 @@ if __name__ == "__main__":
     device = torch.device("cuda" if args.cuda else "cpu")
     envs = [
         InputWrapper(gym.make(name))
-        for name in ('Breakout-v0', 'AirRaid-v0', 'Pong-v0')
+        for name in ('Breakout-v5', 'AirRaid-v5', 'Pong-v5')
     ]
     input_shape = envs[0].observation_space.shape
 
