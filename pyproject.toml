@@ -21,7 +21,10 @@ ignite = "^1.1.0"
 pytorch-ignite = "^0.4.12"
 ale-py = "^0.8.1"
 atari-py = "^0.2.9"
-nltk = "^3.8.1"
+nltk = "^3.8.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.7.1"
+tqdm = "^4.62.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.3.1"
