@@ -11,20 +11,23 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
-from tqdm import trange
+from tqdm import tqdm
+from multiprocessing import Pool
 
 matplotlib.use('Agg')
 
 
 class Bandit:
-    # @k_arm: # of arms
-    # @epsilon: probability for exploration in epsilon-greedy algorithm
-    # @initial: initial estimation for each action
-    # @step_size: constant step size for updating estimations
-    # @sample_averages: if True, use sample averages to update estimations instead of constant step size
-    # @UCB_param: if not None, use UCB algorithm to select action
-    # @gradient: if True, use gradient based bandit algorithm
-    # @gradient_baseline: if True, use average reward as baseline for gradient based bandit algorithm
+    """
+    @k_arm: # of arms
+    @epsilon: probability for exploration in epsilon-greedy algorithm
+    @initial: initial estimation for each action
+    @step_size: constant step size for updating estimations
+    @sample_averages: if True, use sample averages to update estimations instead of constant step size
+    @UCB_param: if not None, use UCB algorithm to select action
+    @gradient: if True, use gradient based bandit algorithm
+    @gradient_baseline: if True, use average reward as baseline for gradient based bandit algorithm
+    """
     def __init__(self, k_arm=10, epsilon=0., initial=0., step_size=0.1, sample_averages=False, UCB_param=None,
                  gradient=False, gradient_baseline=False, true_reward=0.):
         self.k = k_arm
@@ -75,7 +78,12 @@ class Bandit:
 
     # take an action, update estimation for this action
     def step(self, action):
-        # generate the reward under N(real reward, 1)
+        """
+        generate the reward under N(real reward, 1)
+        :param action:
+        :return: reward
+        """
+        #
         reward = np.random.randn() + self.q_true[action]
         self.time += 1
         self.action_count[action] += 1
@@ -99,20 +107,35 @@ class Bandit:
 
 
 def simulate(runs, time, bandits):
-    rewards = np.zeros((len(bandits), runs, time))
-    best_action_counts = np.zeros(rewards.shape)
-    for i, bandit in enumerate(bandits):
-        for r in trange(runs):
-            bandit.reset()
-            for t in range(time):
-                action = bandit.act()
-                reward = bandit.step(action)
-                rewards[i, r, t] = reward
-                if action == bandit.best_action:
-                    best_action_counts[i, r, t] = 1
-    mean_best_action_counts = best_action_counts.mean(axis=1)
-    mean_rewards = rewards.mean(axis=1)
-    return mean_best_action_counts, mean_rewards
+    # rewards = np.zeros((len(bandits), runs, time))
+    # best_action_counts = np.zeros(rewards.shape)
+    print(f"{runs} runs for {len(bandits)} bandits.")
+    mean_bac = []
+    mean_rew = []
+    for bandit in tqdm(bandits):
+        with Pool(32) as P:
+            result = P.map(do_run, ((bandit, time) for r in range(runs)))
+
+        mean_best_action_counts = np.array([r[1] for r in result]).mean(axis=0)#best_action_counts.mean(axis=1)
+        mean_rewards = np.array([r[0] for r in result]).mean(axis=0)#rewards.mean(axis=1)
+        mean_bac.append(mean_best_action_counts)
+        mean_rew.append(mean_rewards)
+    # print(np.array(mean_bac).shape, np.array(mean_rew).shape)
+    return mean_bac, mean_rew
+
+
+def do_run(pars):
+    bandit, time = pars
+    bandit.reset()
+    rewards = np.zeros(time)
+    best_action_counts = np.zeros(time)
+    for t in range(time):
+        action = bandit.act()
+        reward = bandit.step(action)
+        rewards[t] = reward
+        if action == bandit.best_action:
+            best_action_counts[t] = 1
+    return rewards, best_action_counts
 
 
 def figure_2_1():
@@ -209,15 +232,15 @@ def figure_2_6(runs=2000, time=1000):
                   lambda alpha: Bandit(gradient=True, step_size=alpha, gradient_baseline=True),
                   lambda coef: Bandit(epsilon=0, UCB_param=coef, sample_averages=True),
                   lambda initial: Bandit(epsilon=0, initial=initial, step_size=0.1)]
-    parameters = [np.arange(-7, -1, dtype=np.float),
-                  np.arange(-5, 2, dtype=np.float),
-                  np.arange(-4, 3, dtype=np.float),
-                  np.arange(-2, 3, dtype=np.float)]
+    parameters = [np.arange(-7, -1 ,dtype=np.float64),
+                  np.arange(-5, 2, dtype=np.float64),
+                  np.arange(-4, 3, dtype=np.float64),
+                  np.arange(-2, 3, dtype=np.float64)]
 
     bandits = []
     for generator, parameter in zip(generators, parameters):
         for param in parameter:
-            bandits.append(generator(pow(2, param)))
+            bandits.append(generator(2**param))
 
     _, average_rewards = simulate(runs, time, bandits)
     rewards = np.mean(average_rewards, axis=1)
