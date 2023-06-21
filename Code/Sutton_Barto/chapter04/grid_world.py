@@ -13,7 +13,7 @@ from matplotlib.table import Table
 
 matplotlib.use('Agg')
 
-WORLD_SIZE = 4
+WORLD_SIZE = 5
 # left, up, right, down
 ACTIONS = [np.array([0, -1]),
            np.array([-1, 0]),
@@ -36,8 +36,9 @@ def step(state, action):
 
     if x < 0 or x >= WORLD_SIZE or y < 0 or y >= WORLD_SIZE:
         next_state = state
-
-    reward = -1
+        reward = -1
+    else:
+        reward = 0
     return next_state, reward
 
 
@@ -93,10 +94,10 @@ def compute_state_value(in_place=True, discount=1.0):
 def figure_4_1():
     # While the author suggests using in-place iterative policy evaluation,
     # Figure 4.1 actually uses out-of-place version.
-    _, asycn_iteration = compute_state_value(in_place=True)
+    _, async_iteration = compute_state_value(in_place=True)
     values, sync_iteration = compute_state_value(in_place=False)
     draw_image(np.round(values, decimals=2))
-    print('In-place: {} iterations'.format(asycn_iteration))
+    print('In-place: {} iterations'.format(async_iteration))
     print('Synchronous: {} iterations'.format(sync_iteration))
 
     plt.savefig('../images/figure_4_1.png')
