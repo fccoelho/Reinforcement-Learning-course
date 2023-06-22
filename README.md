@@ -10,23 +10,23 @@ Advanced course on Reinforcement Learning.
 1. Markov Decision Processes (MDPs) and Bellman Equations
 1. Q-Learning and SARSA algorithms
 
-### Module 2: Dynamic Programming
+### Module 2: Temporal-Difference methods
 
-1. Value Iteration and Policy Iteration algorithms
-1. Overview of Model-Based and Model-Free Reinforcement Learning
-1. Hands-on experience with grid-world problems
+1. TD Learning
+2. TD prediction
+3. SARSA and TD control
 
 ### Module 3: Monte Carlo Methods
 
 1. First-Visit Monte Carlo and Every-Visit Monte Carlo methods
 1. On-Policy and Off-Policy methods
-1. Temporal-Difference methods
+1. Importance Sampling
 
 ### Module 4: Function Approximation
 
 1. Introduction to function approximation for Reinforcement Learning
 1. Overview of Deep Reinforcement Learning
-1. Hands-on experience with OpenAI Gym environment
+1. Hands-on experience with Gymnasium environment
 
 ### Module 5: Project Work and Conclusion
 
