@@ -1,4 +1,4 @@
-import gym
+import gymnasium as gym
 import ptan
 import torch
 import torch.nn as nn
