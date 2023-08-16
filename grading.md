@@ -15,6 +15,7 @@ Apresentação | Conceito | Nota Final
 -------------|----------|-----------
 A            |  A       | A
 A|B|A
+B|A|B
 B|B|B
 A|D|C
 B|D|D
