@@ -116,12 +116,12 @@ class Generator(nn.Module):
 
 
 def iterate_batches(envs, batch_size=BATCH_SIZE):
-    batch = [e.reset() for e in envs]
+    batch = [e.reset()[0] for e in envs]
     env_gen = iter(lambda: random.choice(envs), None)
 
     while True:
         e = next(env_gen)
-        obs, reward, is_done, _ = e.step(e.action_space.sample())
+        obs, reward, is_done, truncated, info = e.step(e.action_space.sample())
         if np.mean(obs) > 0.01:
             batch.append(obs)
         if len(batch) == batch_size:
@@ -143,7 +143,7 @@ if __name__ == "__main__":
     device = torch.device("cuda" if args.cuda else "cpu")
     envs = [
         InputWrapper(gym.make(name))
-        for name in ('Breakout-v5', 'AirRaid-v5', 'Pong-v5')
+        for name in ('Breakout-v4', 'AirRaid-v4', 'Pong-v4')
     ]
     input_shape = envs[0].observation_space.shape
 

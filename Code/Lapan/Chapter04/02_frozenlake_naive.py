@@ -90,7 +90,7 @@ def filter_batch(batch, percentile):
 
 
 if __name__ == "__main__":
-    env = DiscreteOneHotWrapper(gym.make("FrozenLake-v1"))
+    env = DiscreteOneHotWrapper(gym.make("FrozenLake-v1"))#, render_mode='human'))
     # env = gym.wrappers.Monitor(env, directory="mon", force=True)
     obs_size = env.observation_space.shape[0]
     n_actions = env.action_space.n

@@ -2,7 +2,7 @@ import gymnasium as gym
 
 
 if __name__ == "__main__":
-    env = gym.make("CartPole-v1")
+    env = gym.make("CartPole-v1", render_mode='human')
     env = gym.wrappers.RecordEpisodeStatistics(env)
 
     total_reward = 0.0

@@ -2,7 +2,7 @@ import gymnasium as gym
 
 
 if __name__ == "__main__":
-    env = gym.make("CartPole-v1")#, render_mode='human')
+    env = gym.make("CartPole-v1", render_mode='human')
 
     total_reward = 0.0
     total_steps = 0
