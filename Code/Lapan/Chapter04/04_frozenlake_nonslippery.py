@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import random
+import os
 import gymnasium as gym
 import gymnasium.spaces
 import gymnasium.wrappers
@@ -14,7 +15,7 @@ import torch.optim as optim
 
 
 HIDDEN_SIZE = 128
-BATCH_SIZE = 100
+BATCH_SIZE = 10
 PERCENTILE = 30
 GAMMA = 0.9
 
@@ -90,11 +91,14 @@ def filter_batch(batch, percentile):
 
 
 if __name__ == "__main__":
+    LOAD_BEST_RUN = True
     random.seed(12345)
-    env = gym.envs.toy_text.frozen_lake.FrozenLakeEnv(
-        is_slippery=False)
-    env.spec = gym.spec("FrozenLake-v1")
-    env = gym.wrappers.TimeLimit(env, max_episode_steps=100)
+    # env = gym.make("FrozenLake-v1", is_slippery=False)
+    env = gym.make("FrozenLake-v1", is_slippery=False, render_mode='human')
+    #env = gym.envs.toy_text.frozen_lake.FrozenLakeEnv(
+    #    is_slippery=False)
+    # env.spec = gym.spec("FrozenLake-v1")
+    env = gym.wrappers.TimeLimit(env, max_episode_steps=25)
     env = DiscreteOneHotWrapper(env)
     # env = gym.wrappers.Monitor(env, directory="mon", force=True)
     obs_size = env.observation_space.shape[0]
@@ -104,6 +108,10 @@ if __name__ == "__main__":
     objective = nn.CrossEntropyLoss()
     optimizer = optim.Adam(params=net.parameters(), lr=0.001)
     writer = SummaryWriter(comment="-frozenlake-nonslippery")
+
+    if LOAD_BEST_RUN and os.path.exists('FL_slip_pars.pth'):
+        net.load_state_dict(torch.load('FL_slip_pars.pth'))
+        print('Loaded best run')
 
     full_batch = []
     for iter_no, batch in enumerate(iterate_batches(env, net, BATCH_SIZE)):
@@ -120,6 +128,9 @@ if __name__ == "__main__":
         loss_v = objective(action_scores_v, acts_v)
         loss_v.backward()
         optimizer.step()
+        if iter_no % 100 == 0:
+            print("Saving state dict")
+            torch.save(net.state_dict(),'FL_slip_pars.pth')
         print("%d: loss=%.3f, reward_mean=%.3f, reward_bound=%.3f, batch=%d" % (
             iter_no, loss_v.item(), reward_mean, reward_bound, len(full_batch)))
         writer.add_scalar("loss", loss_v.item(), iter_no)

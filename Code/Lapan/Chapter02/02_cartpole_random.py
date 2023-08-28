@@ -13,8 +13,10 @@ if __name__ == "__main__":
         obs, reward, done, truncated, info = env.step(action)
         total_reward += reward
         total_steps += 1
-        if done:
+        if total_steps > 1000:
             break
+        #if done:
+        #    break
 
     print("Episode done in %d steps, total reward %.2f" % (
         total_steps, total_reward))

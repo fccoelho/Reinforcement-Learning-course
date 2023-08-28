@@ -10,7 +10,7 @@ import torch.optim as optim
 
 
 HIDDEN_SIZE = 128
-BATCH_SIZE = 16
+BATCH_SIZE = 100
 PERCENTILE = 70
 
 
@@ -90,7 +90,7 @@ def filter_batch(batch, percentile):
 
 
 if __name__ == "__main__":
-    env = DiscreteOneHotWrapper(gym.make("FrozenLake-v1"))#, render_mode='human'))
+    env = DiscreteOneHotWrapper(gym.make("FrozenLake-v1"))
     # env = gym.wrappers.Monitor(env, directory="mon", force=True)
     obs_size = env.observation_space.shape[0]
     n_actions = env.action_space.n
