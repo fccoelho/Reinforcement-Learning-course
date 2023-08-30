@@ -6,7 +6,7 @@ from tensorboardX import SummaryWriter
 ENV_NAME = "FrozenLake-v1"
 #ENV_NAME = "FrozenLake8x8-v1"      # uncomment for larger version
 GAMMA = 0.9
-TEST_EPISODES = 20
+TEST_EPISODES = 30
 
 
 class Agent:
@@ -84,7 +84,7 @@ if __name__ == "__main__":
         if reward > best_reward:
             print("Best reward updated %.3f -> %.3f" % (best_reward, reward))
             best_reward = reward
-        if reward > 0.80:
+        if reward > 0.9:
             print("Solved in %d iterations!" % iter_no)
             break
     writer.close()

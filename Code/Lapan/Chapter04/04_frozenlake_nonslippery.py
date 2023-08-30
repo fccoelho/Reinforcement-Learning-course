@@ -93,8 +93,9 @@ def filter_batch(batch, percentile):
 if __name__ == "__main__":
     LOAD_BEST_RUN = True
     random.seed(12345)
-    # env = gym.make("FrozenLake-v1", is_slippery=False)
+    #env = gym.make("FrozenLake-v1", is_slippery=False)
     env = gym.make("FrozenLake-v1", is_slippery=False, render_mode='human')
+
     #env = gym.envs.toy_text.frozen_lake.FrozenLakeEnv(
     #    is_slippery=False)
     # env.spec = gym.spec("FrozenLake-v1")
@@ -128,7 +129,7 @@ if __name__ == "__main__":
         loss_v = objective(action_scores_v, acts_v)
         loss_v.backward()
         optimizer.step()
-        if iter_no % 100 == 0:
+        if iter_no % 30 == 0:
             print("Saving state dict")
             torch.save(net.state_dict(),'FL_slip_pars.pth')
         print("%d: loss=%.3f, reward_mean=%.3f, reward_bound=%.3f, batch=%d" % (
