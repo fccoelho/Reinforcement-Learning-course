@@ -93,8 +93,8 @@ def filter_batch(batch, percentile):
 if __name__ == "__main__":
     LOAD_BEST_RUN = True
     random.seed(12345)
-    #env = gym.make("FrozenLake-v1", is_slippery=False)
-    env = gym.make("FrozenLake-v1", is_slippery=False, render_mode='human')
+    env = gym.make("FrozenLake-v1", is_slippery=False)
+    #env = gym.make("FrozenLake-v1", is_slippery=False, render_mode='human')
 
     #env = gym.envs.toy_text.frozen_lake.FrozenLakeEnv(
     #    is_slippery=False)
