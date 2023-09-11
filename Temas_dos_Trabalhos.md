@@ -1,7 +1,7 @@
 # Temas dos Trabalhos da disciplina
 Liste no numero do Grupo o Nome dos participantes, tema do trabalho e link para referencias externas
 
-1. Abner...
+1. Abner, Pedro Thomaz:
 2. Almir ...
 3. Guilherme de Melo Gonçalves e Ana Carolina Erthal Fernandes. Tema [Atari - Boxing](https://gymnasium.farama.org/environments/atari/boxing/).
 4. Andre, Lívia e Wellington. Ideia: Usar um [jogo de criação própria em python](https://github.com/wellington36/galaxypy), isso possibilita testar mudanças no jogo e como isso interfere na aprendizagem.
@@ -12,7 +12,7 @@ Liste no numero do Grupo o Nome dos participantes, tema do trabalho e link para 
 9. Iago, Vinícius Antunes e Luís Bueno: [Surround](https://gymnasium.farama.org/environments/atari/surround/), na classe de Atari dentro da biblioteca Gymnasium. 
 10. Iara, Marcelo Amaral e Pedro Garcia: : [Freeway](https://gymnasium.farama.org/environments/atari/freeway/) (ou [DemonAttack](https://gymnasium.farama.org/environments/atari/demon_attack/)), na classe de Atari dentro da biblioteca Gymnasium.
 11. ...
-12. Pedro Thomaz...
+12. 
 13. Vanessa, Juan e Bruno Fornaro: [Lunar Lander](https://gymnasium.farama.org/environments/box2d/lunar_lander/), da categoria Box2D. 
 14. Victor...
 15. William...
@@ -35,7 +35,7 @@ data | grupo | tema
 --- |----| ---
 02/10 |       |
 04/10 |       |
-09/10 |       |
+09/10 |  1    |
 11/10 |  10   |
 16/10 |  8    |
 18/10 |  9    |
