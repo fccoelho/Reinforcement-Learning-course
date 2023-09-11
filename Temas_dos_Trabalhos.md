@@ -28,3 +28,26 @@ Projetos:
  - Fredson Aguiar: "[Is bang-bang control all you need? solving continuous control with bernoulli policies](https://proceedings.neurips.cc/paper_files/paper/2021/file/e46be61f0050f9cc3a98d5d2192cb0eb-Paper.pdf)" 
  - Igor Patricio Michels:
  - Bruno Morgan: 
+
+# Calendário das apresentações
+
+data | grupo | tema
+--- |----| ---
+02/10 |       |
+04/10 |       |
+09/10 |       |
+11/10 |       |
+16/10 |       |
+18/10 |       |
+23/10 |       |
+25/10 |       |
+30/10 |       |
+01/11 |       |
+06/11 |       |
+08/11 |       |
+13/11 |       |
+15/11 |       | Feriado
+20/11 |       | Feriado
+22/11 |       |
+27/11 |       |
+29/11 |       |
