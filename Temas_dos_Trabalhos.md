@@ -23,3 +23,8 @@ Os temas abaixo são sugestões para alunos de mestrado.
 1. Policy Gradients - Usar o capítulo 11 do Livro do Lapan como ponto de partida, explicar o método, e implementar policy gradient para algum dos ambientes do Gymnasium.
 2. Deep Q-Learning - Usar o capítulo 6 do Livro do Lapan como ponto de partida, explicar o método, e implementar deep Q-learning para algum dos ambientes do Gymnasium.
 2. Método Actor-Critic - Usar o capítulo 12 do Livro do Lapan como ponto de partida, explicar o método, e implementar actor-critic para algum dos ambientes do Gymnasium.
+
+Projetos:
+ - Fredson Aguiar: "[Is bang-bang control all you need? solving continuous control with bernoulli policies](https://proceedings.neurips.cc/paper_files/paper/2021/file/e46be61f0050f9cc3a98d5d2192cb0eb-Paper.pdf)" 
+ - Igor Patricio Michels:
+ - Bruno Morgan: 
