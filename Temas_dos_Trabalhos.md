@@ -3,10 +3,10 @@ Liste no numero do Grupo o Nome dos participantes, tema do trabalho e link para 
 
 1. Abner...
 2. Almir ...
-3. Ana Carolina
-4. Andre...
+3. Guilherme de Melo Gonçalves e Ana Carolina Erthal Fernandes. Tema [Atari - Boxing](https://gymnasium.farama.org/environments/atari/boxing/).
+4. Andre, Lívia e Wellington. Ideia: Usar um [jogo de criação própria em python](https://github.com/wellington36/galaxypy), isso possibilita testar mudanças no jogo e como isso interfere na aprendizagem.
 5. Breno Azevedo e Daniel Jacob: [Assault](https://gymnasium.farama.org/environments/atari/assault/) 
-6. Fabricio...
+6. Fabrício Venturim, Thiago Melchiors, Carlos Fonseca - [MsPacman/](https://gymnasium.farama.org/environments/atari/ms_pacman/) da classe Atari do Gymnasium
 7. George Dutra, Zuilho e Bruno Kauan: [Tetris](https://gymnasium.farama.org/environments/atari/tetris/), na classe de Atari dentro da biblioteca Gymnasium.
 8. Gustavo Sanches e Lucas Treuke:  [Half Cheetah](https://gymnasium.farama.org/environments/mujoco/half_cheetah/) da classe MuJoCo
 9. Iago, Vinícius Antunes e Luís Bueno: [Surround](https://gymnasium.farama.org/environments/atari/surround/), na classe de Atari dentro da biblioteca Gymnasium. 
