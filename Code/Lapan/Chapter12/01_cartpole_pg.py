@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import gym
-import ptan
+import gymnasium as gym
+# import ptan
 import argparse
 import numpy as np
 from tensorboardX import SummaryWriter

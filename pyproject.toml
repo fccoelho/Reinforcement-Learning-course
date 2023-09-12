@@ -11,7 +11,7 @@ python = ">=3.11,<3.12"
 langchain = "^0.0.163"
 openai = "^0.27.6"
 modin = "^0.22.0"
-gymnasium = {extras = ["accept-rom-license", "atari", "mujoco"], version = "^0.29.1"}
+gymnasium = {extras = ["accept-rom-license", "atari", "mujoco", "box2d"], version = "^0.29.1"}
 torch = ">=2.0.0, !=2.0.1"
 tensorboard = "^2.13.0"
 tensorboardx = "^2.6"
