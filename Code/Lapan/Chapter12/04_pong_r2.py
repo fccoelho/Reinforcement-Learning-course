@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import gym
+import gymnasium as gym
 import ptan
 import time
 import random
