@@ -17,6 +17,7 @@ Liste no numero do Grupo o Nome dos participantes, tema do trabalho e link para 
 14. Victor...
 15. William...
 16. João [Donkey Kong](https://gymnasium.farama.org/environments/atari/donkey_kong/)
+17. Janaina: Car Racing ambiente Box2D (Gymnasium).
 
 ## Temas para Alunos de Mestrado
 Os temas abaixo são sugestões para alunos de mestrado.
