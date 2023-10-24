@@ -2,7 +2,7 @@
 Liste no numero do Grupo o Nome dos participantes, tema do trabalho e link para referencias externas
 
 1. Abner, Pedro Thomaz:
-2. Almir ...
+2. Almir, Gabriel e Alyne: [Rubik's Cube](https://pypi.org/project/rubiks-cube-gym/), dentro da biblioteca Gymnasium.
 3. Guilherme de Melo Gonçalves e Ana Carolina Erthal Fernandes. Tema [Atari - Boxing](https://gymnasium.farama.org/environments/atari/boxing/).
 4. Andre, Lívia e Wellington. Ideia: Usar um [jogo de criação própria em python](https://github.com/wellington36/galaxypy), isso possibilita testar mudanças no jogo e como isso interfere na aprendizagem.
 5. Breno Azevedo e Daniel Jacob: [Assault](https://gymnasium.farama.org/environments/atari/assault/) 
