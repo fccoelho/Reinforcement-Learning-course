@@ -35,7 +35,7 @@ Advanced course on Reinforcement Learning.
 
 ### References:
 
-1. "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto (2018)
+1. ["Reinforcement Learning: An Introduction"](https://mega.nz/file/PRYgTQZS#mDQlM1ztv_WYiSQhvBbPI6k2aSaQnq5Jm796H9F9PMk) by Richard S. Sutton and Andrew G. Barto (2018)
 1. [Python implementation based on the book "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto (2018)](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction) 
 1. "Deep Reinforcement Learning Hands-On" by Maxim Lapan (2018)
 1. [Code for the book "Deep Reinforcement Learning Hands-On" by Maxim Lapan (2018)](https://github.com/PacktPublishing/Deep-Reinforcement-Learning-Hands-On-Second-Edition)

@@ -107,6 +107,17 @@ class Bandit:
 
 
 def simulate(runs, time, bandits):
+    """
+    Simulates the performance of different bandit strategies over multiple runs.
+
+    Args:
+        runs (int): Number of runs to simulate.
+        time (int): Number of time steps per run.
+        bandits (list of Bandit): List of bandit instances to simulate.
+
+    Returns:
+        tuple: Mean best action counts and mean rewards for each bandit.
+    """
     # rewards = np.zeros((len(bandits), runs, time))
     # best_action_counts = np.zeros(rewards.shape)
     print(f"{runs} runs for {len(bandits)} bandits.")
@@ -125,6 +136,15 @@ def simulate(runs, time, bandits):
 
 
 def do_run(pars):
+    """
+    Executes a single run of the bandit simulation.
+
+    Args:
+        pars (tuple): A tuple containing a bandit instance and the number of time steps.
+
+    Returns:
+        tuple: Rewards and best action counts for the run.
+    """
     bandit, time = pars
     bandit.reset()
     rewards = np.zeros(time)
