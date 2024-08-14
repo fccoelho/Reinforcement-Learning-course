@@ -155,14 +155,14 @@ def figure_2_2(runs=2000, time=1000):
 
     plt.subplot(2, 1, 1)
     for eps, rewards in zip(epsilons, rewards):
-        plt.plot(rewards, label='$\epsilon = %.02f$' % (eps))
+        plt.plot(rewards, label=r'$\epsilon = %.02f$' % (eps))
     plt.xlabel('steps')
     plt.ylabel('average reward')
     plt.legend()
 
     plt.subplot(2, 1, 2)
     for eps, counts in zip(epsilons, best_action_counts):
-        plt.plot(counts, label='$\epsilon = %.02f$' % (eps))
+        plt.plot(counts, label=r'$\epsilon = %.02f$' % (eps))
     plt.xlabel('steps')
     plt.ylabel('% optimal action')
     plt.legend()
@@ -177,8 +177,8 @@ def figure_2_3(runs=2000, time=1000):
     bandits.append(Bandit(epsilon=0.1, initial=0, step_size=0.1))
     best_action_counts, _ = simulate(runs, time, bandits)
 
-    plt.plot(best_action_counts[0], label='$\epsilon = 0, q = 5$')
-    plt.plot(best_action_counts[1], label='$\epsilon = 0.1, q = 0$')
+    plt.plot(best_action_counts[0], label=r'$\epsilon = 0, q = 5$')
+    plt.plot(best_action_counts[1], label=r'$\epsilon = 0.1, q = 0$')
     plt.xlabel('Steps')
     plt.ylabel('% optimal action')
     plt.legend()
@@ -194,7 +194,7 @@ def figure_2_4(runs=2000, time=1000):
     _, average_rewards = simulate(runs, time, bandits)
 
     plt.plot(average_rewards[0], label='UCB $c = 2$')
-    plt.plot(average_rewards[1], label='epsilon greedy $\epsilon = 0.1$')
+    plt.plot(average_rewards[1], label=r'epsilon greedy $\epsilon = 0.1$')
     plt.xlabel('Steps')
     plt.ylabel('Average reward')
     plt.legend()

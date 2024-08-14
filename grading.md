@@ -11,13 +11,13 @@ A nota final do curso  (conceito A,B,C ou D) será composta por dois componentes
   - Conceito **A** com probabilidade dada por Bernouli(p),caso contrário conceito **B**
 
 ## Nota final
-Apresentação | Conceito | Nota Final
+Apresentação | Presença | Nota Final
 -------------|----------|-----------
-A            |  A       | A
-A|B|A
-B|A|B
-B|B|B
-A|D|C
-B|D|D
-D|*|D
+A            | A        | A
+A| B        |A
+B| A        |B
+B| B        |B
+A| D        |C
+B| D        |D
+D| *        |D
     
