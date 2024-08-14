@@ -14,9 +14,9 @@ graph TD
     D --> E{Correct & Quality Code?}
     E -- Yes --> F[Reward: Code Quality & Accuracy]
     E -- No --> G[Penalty: Bugs & Errors]
-    F --> H[Switch Roles]
-    G --> H[Switch Roles]
-    H --> I[Iterate Process for Next Segment]
+    F --> I[Iterate Process for Next Segment]
+    G --> I[Iterate Process for Next Segment]
+    
     I --> J{Completed?}
     J -- No --> B
     J -- Yes --> K[Validate Solution Quality & Accuracy]
