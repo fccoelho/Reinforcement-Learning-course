@@ -26,7 +26,9 @@ O espaço de ações do agente revisor é composto por um conjunto de ações qu
 
 Ação | Descrição
 -----|----------
+Análise Estática | Analisar o código com [Mypy](https://mypy-lang.org/), [Ruff](https://docs.astral.sh/ruff/), [Bandit](https://bandit.readthedocs.io/en/latest/), etc.
 Executar código | Executar o código atual para verificar se ele está correto, identificando bugs.
 Propor Refatoração | Propor refatorações para melhorar a qualidade do código.
-Dar Feedback | Dar feedback construtivo e detalhado ao agente codificador sobre o código escrito.
 aprovar código | Aprovar o código como correto e de qualidade.
+----------------
+A ação escolhida, resultará na geração de um *prompt* contendo feedback construtivo e detalhado ao agente codificador sobre o código escrito.
