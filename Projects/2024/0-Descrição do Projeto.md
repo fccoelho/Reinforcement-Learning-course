@@ -16,7 +16,7 @@ graph TD
     E -- No --> G[Penalty: Bugs & Errors]
     F --> I[Iterate Process for Next Segment]
     G --> I[Iterate Process for Next Segment]
-
+    
     I --> J{Completed?}
     J -- No --> B
     J -- Yes --> K[Validate Solution Quality & Accuracy]
