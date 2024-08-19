@@ -54,6 +54,7 @@ class Bandit:
         self.action_count = np.zeros(self.k)
 
         self.best_action = np.argmax(self.q_true)
+        # self.best_action = np.argmax(self.q_estimation)
 
         self.time = 0
 
@@ -103,6 +104,7 @@ class Bandit:
         else:
             # update estimation with constant step size
             self.q_estimation[action] += self.step_size * (reward - self.q_estimation[action])
+        # self.best_action = np.argmax(self.q_estimation)
         return reward
 
 
@@ -126,7 +128,6 @@ def simulate(runs, time, bandits):
     for bandit in tqdm(bandits):
         with Pool(32) as P:
             result = P.map(do_run, ((bandit, time) for r in range(runs)))
-
         mean_best_action_counts = np.array([r[1] for r in result]).mean(axis=0)#best_action_counts.mean(axis=1)
         mean_rewards = np.array([r[0] for r in result]).mean(axis=0)#rewards.mean(axis=1)
         mean_bac.append(mean_best_action_counts)
