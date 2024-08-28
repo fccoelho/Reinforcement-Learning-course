@@ -14,11 +14,11 @@ O espaço de ações do agente codificador é composto por um conjunto de açõe
 
 Ação | Descrição
 -----|----------
-Escrever código novo | Adicionar novas linhas de código ao código atual.
-Editar código | Modificar código existente, para corrigir bugs ou melhorar a qualidade.
-Documentar código | Adicionar comentários ao código para facilitar a compreensão.
-Pedir explicação | Pedir ao agente revisor para explicar uma sugestão de melhoria.
-Implementar sugestão | Implementar uma sugestão de melhoria feita pelo agente revisor.
+processamento dos dados | Limpar, transformar e preparar os dados para análise.
+Analisar os dados | Realizar análises estatísticas, ou contruir modelos de aprendizado de máquina.
+Visualizar os resultados | Gerar gráficos e visualizações dos dados.
+Interpretar a análise | Interpretar os resultados, produzindo um texto que inclua os resultados da análise na forma de figuras e tabelas.
+
 
 ## Agente Revisor
 
@@ -34,6 +34,8 @@ Análise Estática | Analisar o código com [Mypy](https://mypy-lang.org/), [Ruf
 Executar código | Executar o código atual para verificar se ele está correto, identificando bugs.
 Propor Refatoração | Propor refatorações para melhorar a qualidade do código.
 Aprovar código | Aprovar o código como correto e de qualidade.
+Melhorar o Relatório | Escrever um relatório analítico sobre a análise realizada. Caso já exista uma versão do relatório, deve melhorá-lo.
 ----------------
+ A escolha da ação deve ser feita levando em conta os scores produzidos pelo ambiente sobre o estado atual Relatório Analítico.
 
 A ação escolhida, resultará na geração de um *prompt* contendo feedback construtivo e detalhado ao agente codificador sobre o código escrito.
