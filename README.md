@@ -44,3 +44,5 @@ Advanced course on Reinforcement Learning.
 1. PyTorch documentation (https://pytorch.org/docs/stable/index.html)
 1. [AlphaGo Documentary](https://www.youtube.com/watch?v=WXuK6gekU1Y)
 1. [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) [Another Introduction](https://int8.io/monte-carlo-tree-search-beginners-guide/#Policy_network_training_in_Alpha_Go_and_Alpha_Zero)
+2. [Stable Baselines](https://stable-baselines.readthedocs.io/en/master/guide/quickstart.html)
+3. [Application]

@@ -8,7 +8,7 @@ from stable_baselines3 import PPO
 TRAIN = True
 
 # Create the environment
-env = gym.make("MountainCarContinuous-v0", render_mode="human")
+env = gym.make("MountainCarContinuous-v0", render_mode="rgb_array")
 
 # Create the PPO model
 model = PPO("MlpPolicy", env, verbose=1)
