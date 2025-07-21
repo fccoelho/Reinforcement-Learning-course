@@ -18,12 +18,12 @@ class ValueFunction:
 
     def value(self, state, action):
         position_scaled, velocity_scaled = self.get_tile_indices(state)
-        velocity_scaled = min(2, velocity_scaled)
+        velocity_scaled = min(2, abs(velocity_scaled))
         return np.sum(self.weights[position_scaled, velocity_scaled, action])
 
     def update(self, state, action, target):
         position_scaled, velocity_scaled = self.get_tile_indices(state)
-        velocity_scaled = min(2, velocity_scaled)
+        velocity_scaled = min(2, abs(velocity_scaled))
         self.weights[position_scaled, velocity_scaled, action] += self.alpha * (target - self.value(state, action))
 
 def epsilon_greedy_policy(state, value_function, epsilon):
@@ -65,6 +65,7 @@ def semi_gradient_n_step_sarsa(env, value_function, n, alpha, gamma, epsilon, ep
             t += 1
             state = next_state
             action = next_action
+            # env.render()
 
 # Evaluate the performance
 def evaluate_policy(env, value_function, episodes=10):
@@ -77,6 +78,7 @@ def evaluate_policy(env, value_function, episodes=10):
             action = epsilon_greedy_policy(state, value_function, 0)  # Greedy policy
             state, reward, done, _, _ = env.step(action)
             total_reward += reward
+            # env.render()
         returns.append(total_reward)
     return np.mean(returns)
 
