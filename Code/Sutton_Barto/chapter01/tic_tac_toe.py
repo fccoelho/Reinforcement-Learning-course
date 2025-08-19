@@ -209,6 +209,11 @@ class Player:
 
     # update value estimation
     def backup(self):
+        """
+        Update the value estimation of the states in reverse order. Using the temporal difference method,
+        the value of the previous state is updated based on the value of the next state.
+        :return:
+        """
         states = [state.hash() for state in self.states]
 
         for i in reversed(range(len(states) - 1)):
