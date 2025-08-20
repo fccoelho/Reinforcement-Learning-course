@@ -56,3 +56,5 @@ Advanced course on Reinforcement Learning.
 3. [TorchRL](https://pytorch.org/rl/stable/index.html) A PyTorch library for reinforcement learning.
 4. [BenchMARL](https://github.com/facebookresearch/BenchMARL) BenchMARL is a Multi-Agent Reinforcement Learning (MARL) training library created to enable reproducibility and benchmarking across different MARL algorithms and environments.
 5. [VMAS - Vectorized Multi-Agent Reinforcement Learning Simulator](https://github.com/proroklab/VectorizedMultiAgentSimulator) VMAS is a simulator for multi-agent reinforcement learning (MARL) that supports vectorized environments and is designed to be fast and easy to use.
+
+   Link da Aula (Zoom): https://fgv-br.zoom.us/my/flaviocodeco
