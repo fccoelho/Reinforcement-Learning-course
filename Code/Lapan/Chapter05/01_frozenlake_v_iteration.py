@@ -70,7 +70,7 @@ class Agent:
 
 
 if __name__ == "__main__":
-    test_env = gym.make(ENV_NAME)#, render_mode="human")
+    test_env = gym.make(ENV_NAME, render_mode="human")
     agent = Agent()
     writer = SummaryWriter(comment="-v-iteration")
 
