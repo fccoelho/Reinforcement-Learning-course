@@ -3,6 +3,8 @@ import gymnasium as gym
 import collections
 from tensorboardX import SummaryWriter
 
+from Code.Lapan.Chapter23.lib.game import render
+
 ENV_NAME = "FrozenLake-v1"
 #ENV_NAME = "FrozenLake8x8-v1"      # uncomment for larger version
 GAMMA = 0.9
@@ -65,7 +67,7 @@ class Agent:
 
 
 if __name__ == "__main__":
-    test_env = gym.make(ENV_NAME)
+    test_env = gym.make(ENV_NAME, render_mode="human")
     agent = Agent()
     writer = SummaryWriter(comment="-q-iteration")
 
