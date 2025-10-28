@@ -36,6 +36,7 @@ python main.py
 ```
 
 O sistema detectará automaticamente se CUDA está disponível e utilizará GPU quando possível. 
+Ao final do treinamento, é salva a melhor configuração dos agentes treinados, e uma figura com a evolução do score médio dos agentes.
 
 Para gerar a visualização do modelo treinado, execute o script de replay:
 
@@ -49,6 +50,6 @@ python replay.py
 
 Sua tarefa é implementar um novo algoritmo de aprendizado por reforço multi-agente para o ambiente Speaker-Listener. Este algoritmo deve ser capaz de fazer com que o listener consiga navegar até o alvo mais rápido do que o algoritmo [MATD3 original](https://docs.agilerl.com/en/latest/api/algorithms/matd3.html), ou seja, consiga alcançar um score médio maior que -60(score médio da configuração atual). Alternativamente você pode tentar melhorar a configuração do algoritmo atual de forma a superar  a performance atual.
 
-Ao final do treinamento, é salva a melhor configuração dos agentes treinados, e uma figura com a evolução do score médio dos agentes.
+Para saber mais sobre o algoritmo MATD3, consulte [este artigo](https://arxiv.org/abs/1910.01465).
 
 
